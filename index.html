@@ -175,17 +175,28 @@
         <p>原题干：</p>
 <p>A gas station has to be built at such a location that the minimum distance between the station and any of the residential housing is as far away as possible. However it must guarantee that all the houses are in its service range.</p>
 <p>Now given the map of the city and several candidate locations for the gas station, you are supposed to give the best recommendation. If there are more than one solution, output the one with the smallest average distance to all the houses. If such a solution is still not unique, output the one with the smallest index number.</p>
-<p>Input Specification:</p>
+<ul>
+<li>Input Specification:</li>
+</ul>
 <p>Each input file contains one test case. For each case, the first line contains 4 positive integers: N (&lt;= 103), the total number of houses; M (&lt;= 10), the total number of the candidate locations for the gas stations; K (&lt;= 104), the number of roads connecting the houses and the gas stations; and DS, the maximum service range of the gas station. It is hence assumed that all the houses are numbered from 1 to N, and all the candidate locations are numbered from G1 to GM.</p>
 <p>Then K lines follow, each describes a road in the format<br>P1 P2 Dist<br>where P1 and P2 are the two ends of a road which can be either house numbers or gas station numbers, and Dist is the integer length of the road.</p>
-<p>Output Specification:</p>
+<ul>
+<li>Output Specification:</li>
+</ul>
 <p>For each test case, print in the first line the index number of the best location. In the next line, print the minimum and the average distances between the solution and all the houses. The numbers in a line must be separated by a space and be accurate up to 1 decimal place. If the solution does not exist, simply output “No Solution”.</p>
 <p>Sample Input 1:</p>
-<p>4 3 11 5<br>1 2 2<br>1 4 2<br>1 G1 4<br>1 G2 3<br>2 3 2<br>2 G2 1<br>3 4 2<br>3 G3 2<br>4 G1 3<br>G2 G1 1<br>G3 G2 2<br>Sample Output 1:</p>
-<p>G1<br>2.0 3.3<br>Sample Input 2:</p>
-<p>2 1 2 10<br>1 G1 9<br>2 G1 20<br>Sample Output 2:</p>
-<p>No Solution</p>
-<p>题目大意：规划加油站的建设点！</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> <span class="number">3</span> <span class="number">11</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">4</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> G1 <span class="number">4</span></span><br><span class="line"><span class="number">1</span> G2 <span class="number">3</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span> <span class="number">2</span></span><br><span class="line"><span class="number">2</span> G2 <span class="number">1</span></span><br><span class="line"><span class="number">3</span> <span class="number">4</span> <span class="number">2</span></span><br><span class="line"><span class="number">3</span> G3 <span class="number">2</span></span><br><span class="line"><span class="number">4</span> G1 <span class="number">3</span></span><br><span class="line">G2 G1 <span class="number">1</span></span><br><span class="line">G3 G2 <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>Sample Output 1:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">G1</span><br><span class="line"><span class="number">2.0</span> <span class="number">3.3</span></span><br></pre></td></tr></table></figure>
+
+<p>Sample Input 2:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">1</span> <span class="number">2</span> <span class="number">10</span></span><br><span class="line"><span class="number">1</span> G1 <span class="number">9</span></span><br><span class="line"><span class="number">2</span> G1 <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<p>Sample Output 2:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">No Solution</span><br></pre></td></tr></table></figure>
+
+<p> <strong>题目大意：规划加油站的建设点！</strong></p>
 <p>有N的居民房，M个加油站待建点，K条边，要求所有居民房距离加油站不得超过DS</p>
 <p>要求加油站在不超过DS的情况下距离居民房越远越好。让你找出距离最远的加油站</p>
 <p>如果这样最远的加油站存在多个，找出距离居民房平均距离最近的一个</p>

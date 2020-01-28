@@ -6,14 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xiaohua.world">
-  <title>Tag: PAT | DayDream &#39;s Blog</title>
+  <title>1087 All Roads Lead to Rome (30 分) | DayDream &#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="DayDream &#39;s Blog">
-<meta property="og:url" content="https://xiaohua.world/tags/PAT/index.html">
+  <meta name="description" content="Indeed there are many different tourist routes from our city to Rome. You are supposed to find your clients the route with the least cost while gaining the most happiness.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1087 All Roads Lead to Rome (30 分)">
+<meta property="og:url" content="https://xiaohua.world/2020/01/28/1087-All-Roads-Lead-to-Rome-30-%E5%88%86/index.html">
 <meta property="og:site_name" content="DayDream &#39;s Blog">
+<meta property="og:description" content="Indeed there are many different tourist routes from our city to Rome. You are supposed to find your clients the route with the least cost while gaining the most happiness.">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-28T14:24:00.000Z">
+<meta property="article:modified_time" content="2020-01-28T14:36:52.850Z">
 <meta property="article:author" content="DayDream &#39;s Blog">
+<meta property="article:tag" content="Dijkstra">
+<meta property="article:tag" content="图">
+<meta property="article:tag" content="Dfs">
+<meta property="article:tag" content="map字符串处理">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="DayDream &#39;s Blog" type="application/atom+xml">
@@ -158,80 +166,233 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-1087-All-Roads-Lead-to-Rome-30-分" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/26/1072%20Gas%20Station%20(30%E5%88%86)/" class="archive-article-date">
-  	<time datetime="2020-01-26T04:06:28.487Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/26/1072%20Gas%20Station%20(30%E5%88%86)/">1072 Gas Station (30分)</a>
+    <h1 class="article-title" itemprop="name">
+      1087 All Roads Lead to Rome (30 分)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/01/28/1087-All-Roads-Lead-to-Rome-30-%E5%88%86/" class="archive-article-date">
+  	<time datetime="2020-01-28T14:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Indeed there are many different tourist routes from our city to Rome. You are supposed to find your clients the route with the least cost while gaining the most happiness.<a id="more"></a></p>
+<ul>
+<li><p>Input Specification:<br>Each input file contains one test case. For each case, the first line contains 2 positive integers N (2≤N≤200), the number of cities, and K, the total number of routes between pairs of cities; followed by the name of the starting city. The next N−1 lines each gives the name of a city and an integer that represents the happiness one can gain from that city, except the starting city. Then K lines follow, each describes a route between two cities in the format City1 City2 Cost. Here the name of a city is a string of 3 capital English letters, and the destination is always ROM which represents Rome.</p>
+</li>
+<li><p>Output Specification:<br>For each test case, we are supposed to find the route with the least cost. If such a route is not unique, the one with the maximum happiness will be recommanded. If such a route is still not unique, then we output the one with the maximum average happiness – it is guaranteed by the judge that such a solution exists and is unique.</p>
+</li>
+</ul>
+<p>Hence in the first line of output, you must print 4 numbers: the number of different routes with the least cost, the cost, the happiness, and the average happiness (take the integer part only) of the recommanded route. Then in the next line, you are supposed to print the route in the format City1-&gt;City2-&gt;…-&gt;ROM.</p>
+<ul>
+<li><p>Sample Input:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span> <span class="number">7</span> HZH</span><br><span class="line">ROM <span class="number">100</span></span><br><span class="line">PKN <span class="number">40</span></span><br><span class="line">GDN <span class="number">55</span></span><br><span class="line">PRS <span class="number">95</span></span><br><span class="line">BLN <span class="number">80</span></span><br><span class="line">ROM GDN <span class="number">1</span></span><br><span class="line">BLN ROM <span class="number">1</span></span><br><span class="line">HZH PKN <span class="number">1</span></span><br><span class="line">PRS ROM <span class="number">2</span></span><br><span class="line">BLN HZH <span class="number">2</span></span><br><span class="line">PKN GDN <span class="number">1</span></span><br><span class="line">HZH PRS <span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Sample Output:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> <span class="number">3</span> <span class="number">195</span> <span class="number">97</span></span><br><span class="line">HZH-&gt;PRS-&gt;ROM</span><br></pre></td></tr></table></figure></li>
+<li><p>题⽬⼤意：有N个城市，M条⽆向边，从某个给定的起始城市出发，前往名为ROM的城市。每个城市（除了起始城市）都有⼀个点权（称为幸福值），和边权（每条边所需的花费）。求从起点到ROM所需要的最少花费，并输出其路径。如果路径有多条，给出幸福值最⼤的那条。如果仍然不唯⼀，选择路径上的城市平均幸福值最⼤的那条路径</p>
+</li>
+<li><p>分析：Dijkstra+DFS。Dijkstra算出所有最短路径的路线pre⼆维数组，DFS求最⼤happ的路径path，并求出路径条数，最⼤happ，最⼤average～</p>
+</li>
+<li><p>注意：average是除去起点的average。城市名称可以⽤stoint存储字符串所对应的数字，⽤intos存储数字对应的字符串,<em>注意最短路径条数num[s]=0的初始化，path 存放的值才是路径，而不是intos[i]</em>  </p>
+</li>
+</ul>
+<p>代码：(dijkstra+dfs+map字符串处理)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1087 All Roads Lead to Rome (30 分)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> MAX=<span class="number">210</span>;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> INF=INT_MAX;</span><br><span class="line"><span class="keyword">int</span> G[MAX][MAX];</span><br><span class="line"><span class="keyword">int</span> happ[MAX];</span><br><span class="line"><span class="keyword">bool</span> vis[MAX]= &#123;<span class="literal">false</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> cost[MAX];<span class="comment">//dis</span></span><br><span class="line"><span class="keyword">int</span> num[MAX];</span><br><span class="line"></span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt; stoint;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="built_in">string</span>&gt; intos;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N,K;</span><br><span class="line"><span class="built_in">string</span> start;</span><br><span class="line"><span class="keyword">int</span> id=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; pre[MAX];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; path,tempPath;</span><br><span class="line"><span class="keyword">int</span> optvalue;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">stointfun</span><span class="params">(<span class="built_in">string</span> str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(stoint[str]==<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		id++;</span><br><span class="line">		stoint[str]=id;</span><br><span class="line">		intos[id]=str;</span><br><span class="line">		<span class="keyword">return</span> id;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		intos[id]=str;</span><br><span class="line">		<span class="keyword">return</span> id;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dijkstra</span><span class="params">(<span class="keyword">int</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">fill</span>(cost,cost+MAX,INF);</span><br><span class="line">	cost[s]=<span class="number">0</span>;</span><br><span class="line">	num[s]=<span class="number">1</span>;<span class="comment">//注意初始化</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=N; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> u=<span class="number">-1</span>,<span class="built_in">min</span>=INF;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=N; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(vis[j]==<span class="literal">false</span>&amp;&amp;cost[j]&lt;<span class="built_in">min</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				u=j;</span><br><span class="line">				<span class="built_in">min</span>=cost[j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(u==<span class="number">-1</span>)</span><br><span class="line">			<span class="keyword">return</span> ;</span><br><span class="line">		vis[u]=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> v=<span class="number">1</span>; v&lt;=N; v++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(vis[v]==<span class="literal">false</span>&amp;&amp;G[u][v]!=INF)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(G[u][v]+cost[u]&lt;cost[v])</span><br><span class="line">				&#123;</span><br><span class="line">					cost[v]=G[u][v]+cost[u];</span><br><span class="line">					num[v]=num[u];</span><br><span class="line">					pre[v].<span class="built_in">clear</span>();</span><br><span class="line">					pre[v].push_back(u);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span>(G[u][v]+cost[u]==cost[v])</span><br><span class="line">				&#123;</span><br><span class="line">					pre[v].push_back(u);</span><br><span class="line">					num[v]+=num[u];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dfs</span><span class="params">(<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(v==stoint[start])</span><br><span class="line">	&#123;</span><br><span class="line">		tempPath.push_back(v);</span><br><span class="line">		<span class="keyword">int</span> value=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=tempPath.<span class="built_in">size</span>()<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> id=tempPath[i];</span><br><span class="line">			value+=happ[id];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(value&gt;optvalue)</span><br><span class="line">		&#123;</span><br><span class="line">			optvalue=value;</span><br><span class="line">			path=tempPath;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		tempPath.pop_back();</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	tempPath.push_back(v);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;pre[v].<span class="built_in">size</span>(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		Dfs(pre[v][i]);</span><br><span class="line">	&#125;</span><br><span class="line">	tempPath.pop_back();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;N&gt;&gt;K&gt;&gt;start;</span><br><span class="line">	stointfun(start);<span class="comment">//注意初始化</span></span><br><span class="line">	<span class="built_in">fill</span>(G[<span class="number">0</span>],G[<span class="number">0</span>]+MAX*MAX,INF);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;N<span class="number">-1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">string</span> str;</span><br><span class="line">		<span class="keyword">int</span> h;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;str&gt;&gt;h;</span><br><span class="line">		happ[stointfun(str)]=h;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;K; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">string</span> str1,str2;</span><br><span class="line">		<span class="keyword">int</span> c;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;str1&gt;&gt;str2&gt;&gt;c;</span><br><span class="line">		<span class="keyword">int</span> a=stoint[str1];</span><br><span class="line">		<span class="keyword">int</span> b=stoint[str2];</span><br><span class="line">		G[a][b]=G[b][a]=c;</span><br><span class="line">	&#125;</span><br><span class="line">	Dijkstra(stoint[start]);</span><br><span class="line">	Dfs(stoint[<span class="string">"ROM"</span>]);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;num[stoint[<span class="string">"ROM"</span>]]&lt;&lt;<span class="string">" "</span>&lt;&lt;cost[stoint[<span class="string">"ROM"</span>]]&lt;&lt;<span class="string">" "</span>&lt;&lt;optvalue&lt;&lt;<span class="string">" "</span>&lt;&lt;optvalue/(path.<span class="built_in">size</span>()<span class="number">-1</span>)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=path.<span class="built_in">size</span>()<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(i==path.<span class="built_in">size</span>()<span class="number">-1</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;intos[path[i]];</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"-&gt;"</span>&lt;&lt;intos[path[i]];<span class="comment">//path 存放的值才是路径，而不是intos[i] </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dijkstra</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dijkstra</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">图</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dfs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">map字符串处理</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/PAT//" class="article-tag-list-link color4">PAT</a>
+        			<a href="/categories/图//" class="article-tag-list-link color2">图</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/PAT/Dijkstra//" class="article-tag-list-link color4">Dijkstra</a>
+        			<a href="/categories/图/Dijkstra//" class="article-tag-list-link color4">Dijkstra</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/图/Dijkstra/Dfs//" class="article-tag-list-link color4">Dfs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/图/Dijkstra/Dfs/map字符串处理//" class="article-tag-list-link color4">map字符串处理</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xiaohua.world/2020/01/28/1087-All-Roads-Lead-to-Rome-30-%E5%88%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/01/28/1003-Emergency-25%E5%88%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">1003 Emergency (25分)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
 
+  
+
+  
 
           </div>
         </div>
@@ -264,9 +425,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

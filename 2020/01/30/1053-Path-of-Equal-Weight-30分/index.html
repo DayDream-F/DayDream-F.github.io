@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xiaohua.world">
-  <title>Category: Dfs | DayDream &#39;s Blog</title>
+  <title>1053 Path of Equal Weight (30分) | DayDream &#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="DayDream &#39;s Blog">
-<meta property="og:url" content="https://xiaohua.world/categories/%E5%9B%BE/Dijkstra/Dfs/index.html">
+  <meta name="description" content="Given a non-empty tree with root R, and with weight W​iassigned to each tree node T​i. The weight of a path from R to L is defined to be the sum of the weights of all the nodes along the path from R t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1053 Path of Equal Weight (30分)">
+<meta property="og:url" content="https://xiaohua.world/2020/01/30/1053-Path-of-Equal-Weight-30%E5%88%86/index.html">
 <meta property="og:site_name" content="DayDream &#39;s Blog">
+<meta property="og:description" content="Given a non-empty tree with root R, and with weight W​iassigned to each tree node T​i. The weight of a path from R to L is defined to be the sum of the weights of all the nodes along the path from R t">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://images.ptausercontent.com/212">
+<meta property="article:published_time" content="2020-01-30T09:08:58.000Z">
+<meta property="article:modified_time" content="2020-01-30T09:23:57.303Z">
 <meta property="article:author" content="DayDream &#39;s Blog">
+<meta property="article:tag" content="PAT">
+<meta property="article:tag" content="Dfs">
+<meta property="article:tag" content="树">
+<meta property="article:tag" content="树的遍历">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.ptausercontent.com/212">
   
     <link rel="alternative" href="/atom.xml" title="DayDream &#39;s Blog" type="application/atom+xml">
   
@@ -158,111 +168,89 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-1053-Path-of-Equal-Weight-30分" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      1053 Path of Equal Weight (30分)
+    </h1>
+  
+
+        
+        <a href="/2020/01/30/1053-Path-of-Equal-Weight-30%E5%88%86/" class="archive-article-date">
+  	<time datetime="2020-01-30T09:08:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-30</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given a non-empty tree with root R, and with weight W​iassigned to each tree node T​i. The weight of a path from R to L is defined to be the sum of the weights of all the nodes along the path from R to any leaf node L.</p>
+<a id="more"></a>
+<p>Now given any weighted tree, you are supposed to find all the paths with their weights equal to a given number. For example, let’s consider the tree showed in the following figure: for each node, the upper number is the node ID which is a two-digit number, and the lower number is the weight of that node. Suppose that the given number is 24, then there exists 4 different paths which have the same given weight: {10 5 2 7}, {10 4 10}, {10 3 3 6 2} and {10 3 3 6 2}, which correspond to the red edges in the figure.<br> <img src="https://images.ptausercontent.com/212" alt="Alt"></p>
+<ul>
+<li><p>Input Specification:<br>Each input file contains one test case. Each case starts with a line containing 0&lt; N≤100, the number of nodes in a tree, M (&lt; N), the number of non-leaf nodes, and 0&lt; S&lt;2​30, the given weight number. The next line contains N positive numbers where W​i(&lt;1000) corresponds to the tree node Ti<br>. Then M lines follow, each in the format:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ID K ID[<span class="number">1</span>] ID[<span class="number">2</span>] ... ID[K]</span><br></pre></td></tr></table></figure></li>
+<li><p>Output Specification:<br>For each test case, print all the paths with weight S in non-increasing order. Each path occupies a line with printed weights from the root to the leaf in order. All the numbers must be separated by a space with no extra space at the end of the line.<br>Note: sequence {A1,A​2,⋯,A​n} is said to be greater than sequence {B1,B​2,⋯Bm} if there exists 1≤k&lt; min{n,m} such that Ai=Bifor i=1,⋯,k, and A​k+1&gt;Bk+1<br>.</p>
+</li>
+<li><p>Sample Input:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">20</span> <span class="number">9</span> <span class="number">24</span></span><br><span class="line"><span class="number">10</span> <span class="number">2</span> <span class="number">4</span> <span class="number">3</span> <span class="number">5</span> <span class="number">10</span> <span class="number">2</span> <span class="number">18</span> <span class="number">9</span> <span class="number">7</span> <span class="number">2</span> <span class="number">2</span> <span class="number">1</span> <span class="number">3</span> <span class="number">12</span> <span class="number">1</span> <span class="number">8</span> <span class="number">6</span> <span class="number">2</span> <span class="number">2</span></span><br><span class="line"><span class="number">00</span> <span class="number">4</span> <span class="number">01</span> <span class="number">02</span> <span class="number">03</span> <span class="number">04</span></span><br><span class="line"><span class="number">02</span> <span class="number">1</span> <span class="number">05</span></span><br><span class="line"><span class="number">04</span> <span class="number">2</span> <span class="number">06</span> <span class="number">07</span></span><br><span class="line"><span class="number">03</span> <span class="number">3</span> <span class="number">11</span> <span class="number">12</span> <span class="number">13</span></span><br><span class="line"><span class="number">06</span> <span class="number">1</span> <span class="number">09</span></span><br><span class="line"><span class="number">07</span> <span class="number">2</span> <span class="number">08</span> <span class="number">10</span></span><br><span class="line"><span class="number">16</span> <span class="number">1</span> <span class="number">15</span></span><br><span class="line"><span class="number">13</span> <span class="number">3</span> <span class="number">14</span> <span class="number">16</span> <span class="number">17</span></span><br><span class="line"><span class="number">17</span> <span class="number">2</span> <span class="number">18</span> <span class="number">19</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Sample Output:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span> <span class="number">5</span> <span class="number">2</span> <span class="number">7</span></span><br><span class="line"><span class="number">10</span> <span class="number">4</span> <span class="number">10</span></span><br><span class="line"><span class="number">10</span> <span class="number">3</span> <span class="number">3</span> <span class="number">6</span> <span class="number">2</span></span><br><span class="line"><span class="number">10</span> <span class="number">3</span> <span class="number">3</span> <span class="number">6</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></li>
+<li><p>题⽬⼤意：给出树的结构和权值，找从根结点到叶⼦结点的路径上的权值相加之和等于给定⽬标数的路径，并且从⼤到⼩输出路径</p>
+</li>
+<li><p>分析：对于接收孩⼦结点的数据时，每次完全接收完就对孩⼦结点按照权值进⾏排序（序号变，根据权值变），这样保证深度优先遍历的时候直接输出就能输出从⼤到⼩的顺序。记录路径采取这样的⽅式：⾸先建⽴⼀个path数组，传⼊⼀个nodeNum记录对当前路径来说这是第⼏个结点（这样直接在path[nodeNum]⾥⾯存储当前结点的孩⼦结点的序号，这样可以保证在先判断return的时候，path是从0-numNum-1的值确实是要求的路径结点）。然后每次要遍历下⼀个孩⼦结点的之前，令path[nodeNum] = 孩⼦结点的序号，这样就保证了在return的时候当前path⾥⾯从0~nodeNum-1的值就是要输出的路径的结点序号，输出这个序号的权值即可，直接在return语句⾥⾯输出。注意：当sum==S的时候，记得判断是否孩⼦结点是空，要不然如果不空说明没有到底部，就直接return⽽不是输出路径。。。（这对接下来的孩⼦结点都是正数才有⽤，负权⽆⽤）。  </p>
+</li>
+</ul>
+<p>代码：(树的遍历，Dfs)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1053 Path of Equal Weight (30分)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> MAX=<span class="number">104</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> weight;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; child;</span><br><span class="line">&#125;Node[MAX];</span><br><span class="line"><span class="keyword">int</span> path[MAX];</span><br><span class="line"><span class="keyword">int</span> N,M,S;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> Node[a].weight&gt;Node[b].weight;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PreOrder</span><span class="params">(<span class="keyword">int</span> root,<span class="keyword">int</span> sum,<span class="keyword">int</span> numNode)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(sum&gt;S)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(sum==S)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(Node[root].child.<span class="built_in">size</span>()!=<span class="number">0</span>)</span><br><span class="line">			<span class="keyword">return</span> ;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numNode;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i==<span class="number">0</span>)</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;Node[path[i]].weight;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>&lt;&lt;Node[path[i]].weight;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;Node[root].child.<span class="built_in">size</span>();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> next=Node[root].child[i];</span><br><span class="line">		path[numNode]=next;</span><br><span class="line">		PreOrder(next,sum+Node[next].weight,numNode+<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;N&gt;&gt;M&gt;&gt;S;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;Node[i].weight;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;M;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> id,num,index;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;id&gt;&gt;num;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;num;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;index;</span><br><span class="line">			Node[id].child.push_back(index);</span><br><span class="line">		&#125;</span><br><span class="line">		sort(Node[id].child.<span class="built_in">begin</span>(),Node[id].child.<span class="built_in">end</span>(),cmp);</span><br><span class="line">	&#125;</span><br><span class="line">	path[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">	PreOrder(<span class="number">0</span>,Node[<span class="number">0</span>].weight,<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/29/1030%20Travel%20Plan%20(30%E5%88%86)/" class="archive-article-date">
-  	<time datetime="2020-01-29T05:57:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/29/1030%20Travel%20Plan%20(30%E5%88%86)/">1030 Travel Plan (30分)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dijkstra</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dfs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/图//" class="article-tag-list-link color2">图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/图/Dijkstra//" class="article-tag-list-link color4">Dijkstra</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/图/Dijkstra/Dfs//" class="article-tag-list-link color4">Dfs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/28/1087%20All%20Roads%20Lead%20to%20Rome%20(30%20%E5%88%86)/" class="archive-article-date">
-  	<time datetime="2020-01-28T14:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/28/1087%20All%20Roads%20Lead%20to%20Rome%20(30%20%E5%88%86)/">1087 All Roads Lead to Rome (30 分)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dijkstra</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">图</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -270,129 +258,140 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">map字符串处理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">树</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">树的遍历</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/图//" class="article-tag-list-link color2">图</a>
+        			<a href="/categories/树//" class="article-tag-list-link color2">树</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/图/Dijkstra//" class="article-tag-list-link color4">Dijkstra</a>
+        			<a href="/categories/树/树的遍历//" class="article-tag-list-link color5">树的遍历</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/图/Dijkstra/Dfs//" class="article-tag-list-link color4">Dfs</a>
+        			<a href="/categories/树/树的遍历/Dfs//" class="article-tag-list-link color4">Dfs</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/图/Dijkstra/Dfs/map字符串处理//" class="article-tag-list-link color4">map字符串处理</a>
+        			<a href="/categories/树/树的遍历/Dfs/PAT//" class="article-tag-list-link color4">PAT</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xiaohua.world/2020/01/30/1053-Path-of-Equal-Weight-30%E5%88%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/28/1003-Emergency-25%E5%88%86/" class="archive-article-date">
-  	<time datetime="2020-01-28T11:21:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/30/%E6%A0%91%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">树笔记整理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/28/1003-Emergency-25%E5%88%86/">1003 Emergency (25分)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dijkstra</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dfs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/图//" class="article-tag-list-link color2">图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/图/Dijkstra//" class="article-tag-list-link color4">Dijkstra</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/图/Dijkstra/Dfs//" class="article-tag-list-link color4">Dfs</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
-
-<article class="article article-type-post show">
-  <header class="article-header" style="border-bottom: 1px solid #ccc">
-  <h1 class="article-title" itemprop="name">
-    
-  </h1>
-  </header>
 
   
-  <div class="category-all-page">
-    <h2>共计&nbsp;15&nbsp;个分类</h2>
-    <ul class="category-list-item-list"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/PAT/">PAT</a><span class="category-list-item-list-count">1</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/PAT/Dijkstra/">Dijkstra</a><span class="category-list-item-list-count">1</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%9B%BE/">图</a><span class="category-list-item-list-count">4</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%9B%BE/Dijkstra/">Dijkstra</a><span class="category-list-item-list-count">3</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%9B%BE/dfs/">dfs</a><span class="category-list-item-list-count">1</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/">树</a><span class="category-list-item-list-count">3</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">树的遍历</a><span class="category-list-item-list-count">3</span></li></ul></li></ul>
-  </div>
   
-</article>
+  
+
+  
+
+  
+
+  
+
           </div>
         </div>
       </div>
@@ -424,10 +423,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",

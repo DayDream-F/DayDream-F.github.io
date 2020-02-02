@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xiaohua.world">
-  <title>Category: Dijkstra | DayDream &#39;s Blog</title>
+  <title>1021 Deepest Root (25分) | DayDream &#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="DayDream &#39;s Blog">
-<meta property="og:url" content="https://xiaohua.world/categories/PAT/Dijkstra/index.html">
+  <meta name="description" content="A graph which is connected and acyclic can be considered a tree. The height of the tree depends on the selected root. Now you are supposed to find the root that results in a highest tree. Such a root">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1021 Deepest Root (25分)">
+<meta property="og:url" content="https://xiaohua.world/2020/02/02/1021-Deepest-Root-25%E5%88%86/index.html">
 <meta property="og:site_name" content="DayDream &#39;s Blog">
+<meta property="og:description" content="A graph which is connected and acyclic can be considered a tree. The height of the tree depends on the selected root. Now you are supposed to find the root that results in a highest tree. Such a root">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-02T09:38:15.000Z">
+<meta property="article:modified_time" content="2020-02-02T09:45:03.952Z">
 <meta property="article:author" content="DayDream &#39;s Blog">
+<meta property="article:tag" content="PAT">
+<meta property="article:tag" content="Dfs">
+<meta property="article:tag" content="树">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="DayDream &#39;s Blog" type="application/atom+xml">
@@ -158,36 +165,77 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-1021-Deepest-Root-25分" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/26/1072%20Gas%20Station%20(30%E5%88%86)/" class="archive-article-date">
-  	<time datetime="2020-01-26T04:06:28.487Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/26/1072%20Gas%20Station%20(30%E5%88%86)/">1072 Gas Station (30分)</a>
+    <h1 class="article-title" itemprop="name">
+      1021 Deepest Root (25分)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/02/02/1021-Deepest-Root-25%E5%88%86/" class="archive-article-date">
+  	<time datetime="2020-02-02T09:38:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>A graph which is connected and acyclic can be considered a tree. The height of the tree depends on the selected root. Now you are supposed to find the root that results in a highest tree. Such a root is called the deepest root. <a id="more"></a></p>
+<h1 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h1><p>Each input file contains one test case. For each case, the first line contains a positive integer N (≤10^​4) which is the number of nodes, and hence the nodes are numbered from 1 to N. Then N−1 lines follow, each describes an edge by given the two adjacent nodes’ numbers.</p>
+<h1 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h1><p>For each test case, print each of the deepest roots in a line. If such a root is not unique, print them in increasing order of their numbers. In case that the given graph is not a tree, print Error: K components where K is the number of connected components in the graph.</p>
+<h1 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">3</span></span><br><span class="line"><span class="number">1</span> <span class="number">4</span></span><br><span class="line"><span class="number">2</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h1 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h1 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">1</span> <span class="number">3</span></span><br><span class="line"><span class="number">1</span> <span class="number">4</span></span><br><span class="line"><span class="number">2</span> <span class="number">5</span></span><br><span class="line"><span class="number">3</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<h1 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: <span class="number">2</span> components</span><br></pre></td></tr></table></figure>
+<ul>
+<li>题⽬⼤意：给出n个结点（1~n）之间的n条边，问是否能构成⼀棵树，如果不能构成则输出它有的连<br>通分量个数，如果能构成⼀棵树，输出能构成最深的树的⾼度时，树的根结点。如果有多个，按照从<br>⼩到⼤输出。</li>
+<li>分析：⾸先深度优先搜索判断它有⼏个连通分量。如果有多个，那就输出Error: x components，如果只<br>有⼀个，就两次深度优先搜索，先从⼀个结点dfs后保留最⾼⾼度拥有的结点们，然后从这些结点中的<br>其中任意⼀个开始dfs得到最⾼⾼度的结点们，这两个结点集合的并集就是所求</li>
+</ul>
+<p>代码：(树,dfs)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1021 Deepest Root (25分)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> MAX=<span class="number">1e4</span>+<span class="number">5</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; G;</span><br><span class="line"><span class="keyword">bool</span> vis[MAX];</span><br><span class="line"><span class="keyword">int</span> N,cnt=<span class="number">0</span>,maxheight=<span class="number">0</span>,s1=<span class="number">0</span>;</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> <span class="built_in">height</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">height</span>&gt;maxheight)</span><br><span class="line">	&#123;</span><br><span class="line">		temp.<span class="built_in">clear</span>();</span><br><span class="line">		temp.push_back(u);</span><br><span class="line">		maxheight=<span class="built_in">height</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">height</span>==maxheight)</span><br><span class="line">	&#123;</span><br><span class="line">		temp.push_back(u);</span><br><span class="line">	&#125;</span><br><span class="line">	vis[u]=<span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> v=<span class="number">0</span>; v&lt;G[u].<span class="built_in">size</span>(); v++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(vis[G[u][v]]==<span class="literal">false</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			DFS(G[u][v],<span class="built_in">height</span>+<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFStravel</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=N; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(vis[i]==<span class="literal">false</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			DFS(i,<span class="number">1</span>);</span><br><span class="line">			cnt++;</span><br><span class="line">			<span class="keyword">if</span>(i == <span class="number">1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(temp.<span class="built_in">size</span>() != <span class="number">0</span>)</span><br><span class="line">					s1 = temp[<span class="number">0</span>];</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; temp.<span class="built_in">size</span>(); j++)</span><br><span class="line">					s.insert(temp[j]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(cnt &gt;= <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Error: %d components"</span>, cnt);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		temp.<span class="built_in">clear</span>();</span><br><span class="line">		maxheight = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">fill</span>(vis, vis + <span class="number">10010</span>, <span class="literal">false</span>);</span><br><span class="line">		DFS(s1, <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; temp.<span class="built_in">size</span>(); i++)</span><br><span class="line">			s.insert(temp[i]);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">auto</span> it = s.<span class="built_in">begin</span>(); it != s.<span class="built_in">end</span>(); it++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, *it);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;N;</span><br><span class="line">	G.resize(N+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=N<span class="number">-1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> a,b;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">		G[a].push_back(b);</span><br><span class="line">		G[b].push_back(a);</span><br><span class="line">	&#125;</span><br><span class="line">	DFStravel();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,56 +245,136 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dijkstra</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dfs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">树</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/PAT//" class="article-tag-list-link color4">PAT</a>
+        			<a href="/categories/树//" class="article-tag-list-link color2">树</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/PAT/Dijkstra//" class="article-tag-list-link color4">Dijkstra</a>
+        			<a href="/categories/树/Dfs//" class="article-tag-list-link color4">Dfs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/树/Dfs/PAT//" class="article-tag-list-link color4">PAT</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xiaohua.world/2020/02/02/1021-Deepest-Root-25%E5%88%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
-
-    
-
-
-<article class="article article-type-post show">
-  <header class="article-header" style="border-bottom: 1px solid #ccc">
-  <h1 class="article-title" itemprop="name">
-    
-  </h1>
-  </header>
 
   
-  <div class="category-all-page">
-    <h2>共计&nbsp;20&nbsp;个分类</h2>
-    <ul class="category-list-item-list"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/PAT/">PAT</a><span class="category-list-item-list-count">1</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/PAT/Dijkstra/">Dijkstra</a><span class="category-list-item-list-count">1</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%9B%BE/">图</a><span class="category-list-item-list-count">4</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%9B%BE/Dijkstra/">Dijkstra</a><span class="category-list-item-list-count">3</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%9B%BE/dfs/">dfs</a><span class="category-list-item-list-count">1</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/">树</a><span class="category-list-item-list-count">5</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/Dfs/">Dfs</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/">二叉排序树</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">树的遍历</a><span class="category-list-item-list-count">3</span></li></ul></li></ul>
-  </div>
+<nav id="article-nav">
   
-</article>
+  
+    <a href="/2020/02/02/1043-Is-It-a-Binary-Search-Tree-25%E5%88%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">1043 Is It a Binary Search Tree (25分)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
+
           </div>
         </div>
       </div>
@@ -278,10 +406,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",

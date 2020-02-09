@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xiaohua.world">
-  <title>Category: PAT | DayDream &#39;s Blog</title>
+  <title>并查集笔记整理 | DayDream &#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="DayDream &#39;s Blog">
-<meta property="og:url" content="https://xiaohua.world/categories/%E6%A0%91/Dfs/PAT/index.html">
+  <meta name="description" content="并查集的定义 1int father[100]; 初始化 1234567void init(int N)&amp;#123;	for(int i&#x3D;1;i&lt;&#x3D;N;i++)	&amp;#123;		father[i]&#x3D;i;	&amp;#125;&amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="并查集笔记整理">
+<meta property="og:url" content="https://xiaohua.world/2020/02/09/%E5%B9%B6%E6%9F%A5%E9%9B%86%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="DayDream &#39;s Blog">
+<meta property="og:description" content="并查集的定义 1int father[100]; 初始化 1234567void init(int N)&amp;#123;	for(int i&#x3D;1;i&lt;&#x3D;N;i++)	&amp;#123;		father[i]&#x3D;i;	&amp;#125;&amp;#125;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-09T10:41:27.000Z">
+<meta property="article:modified_time" content="2020-02-09T10:47:04.364Z">
 <meta property="article:author" content="DayDream &#39;s Blog">
+<meta property="article:tag" content="并查集">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="DayDream &#39;s Blog" type="application/atom+xml">
@@ -158,103 +163,196 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-并查集笔记整理" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/02/1021-Deepest-Root-25%E5%88%86/" class="archive-article-date">
-  	<time datetime="2020-02-02T09:38:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/02/1021-Deepest-Root-25%E5%88%86/">1021 Deepest Root (25分)</a>
+    <h1 class="article-title" itemprop="name">
+      并查集笔记整理
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/02/09/%E5%B9%B6%E6%9F%A5%E9%9B%86%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" class="archive-article-date">
+  	<time datetime="2020-02-09T10:41:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>并查集的定义</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> father[<span class="number">100</span>];</span><br></pre></td></tr></table></figure>
+<p>初始化</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> N)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		father[i]=i;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>查找</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findFather</span><span class="params">(<span class="keyword">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a=x;</span><br><span class="line">	<span class="keyword">while</span>(x!=father[x])</span><br><span class="line">	&#123;</span><br><span class="line">		x=father[x];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//到这里x存放的是根节点 </span></span><br><span class="line">    <span class="comment">//路径压缩</span></span><br><span class="line">	<span class="keyword">while</span>(a!=father[a])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> z=a;</span><br><span class="line">		a=father[a];</span><br><span class="line">		father[z]=x;<span class="comment">//将原先的结点a的父亲改为根节点x </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>合并</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fa=<span class="built_in">find</span>(a);</span><br><span class="line">	<span class="keyword">int</span> fb=<span class="built_in">find</span>(b);</span><br><span class="line">	<span class="keyword">if</span>(fa!=fb)</span><br><span class="line">		father[fa]=fb;	<span class="comment">//合并 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dfs</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">树</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">并查集</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/树//" class="article-tag-list-link color2">树</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/树/Dfs//" class="article-tag-list-link color4">Dfs</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/树/Dfs/PAT//" class="article-tag-list-link color4">PAT</a>
+        			<a href="/categories/并查集//" class="article-tag-list-link color4">并查集</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xiaohua.world/2020/02/09/%E5%B9%B6%E6%9F%A5%E9%9B%86%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
-
-    
-
-
-<article class="article article-type-post show">
-  <header class="article-header" style="border-bottom: 1px solid #ccc">
-  <h1 class="article-title" itemprop="name">
-    
-  </h1>
-  </header>
 
   
-  <div class="category-all-page">
-    <h2>共计&nbsp;26&nbsp;个分类</h2>
-    <ul class="category-list-item-list"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/PAT/">PAT</a><span class="category-list-item-list-count">1</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/PAT/Dijkstra/">Dijkstra</a><span class="category-list-item-list-count">1</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%9B%BE/">图</a><span class="category-list-item-list-count">4</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%9B%BE/Dijkstra/">Dijkstra</a><span class="category-list-item-list-count">3</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%9B%BE/dfs/">dfs</a><span class="category-list-item-list-count">1</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%B9%B6%E6%9F%A5%E9%9B%86/">并查集</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%B9%B6%E6%9F%A5%E9%9B%86%E5%90%88/">并查集合</a><span class="category-list-item-list-count">1</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%B9%B6%E6%9F%A5%E9%9B%86%E5%90%88/PAT/">PAT</a><span class="category-list-item-list-count">1</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/">树</a><span class="category-list-item-list-count">9</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/Dfs/">Dfs</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/">二叉排序树</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">树的遍历</a><span class="category-list-item-list-count">7</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/">简单模拟</a><span class="category-list-item-list-count">2</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">字符串处理</a><span class="category-list-item-list-count">1</span></li></ul></li></ul>
-  </div>
+<nav id="article-nav">
   
-</article>
+  
+    <a href="/2020/02/07/1107-Social-Clusters-30%E5%88%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">1107 Social Clusters (30分)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
+
           </div>
         </div>
       </div>
@@ -286,10 +384,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",

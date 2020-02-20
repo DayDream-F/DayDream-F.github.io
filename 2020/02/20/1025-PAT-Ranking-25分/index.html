@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xiaohua.world">
-  <title>Category: PAT | DayDream &#39;s Blog</title>
+  <title>1025 PAT Ranking (25分) | DayDream &#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="DayDream &#39;s Blog">
-<meta property="og:url" content="https://xiaohua.world/categories/hash%E6%95%A3%E5%88%97/PAT/index.html">
+  <meta name="description" content="Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejiang University. Each test is supposed to run simultaneously in several places, and the ranklists w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1025 PAT Ranking (25分)">
+<meta property="og:url" content="https://xiaohua.world/2020/02/20/1025-PAT-Ranking-25%E5%88%86/index.html">
 <meta property="og:site_name" content="DayDream &#39;s Blog">
+<meta property="og:description" content="Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejiang University. Each test is supposed to run simultaneously in several places, and the ranklists w">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-20T14:11:18.000Z">
+<meta property="article:modified_time" content="2020-02-20T14:23:51.321Z">
 <meta property="article:author" content="DayDream &#39;s Blog">
+<meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="DayDream &#39;s Blog" type="application/atom+xml">
@@ -158,152 +163,203 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-1025-PAT-Ranking-25分" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/16/1092-To-Buy-or-Not-to-Buy-20%E5%88%86/" class="archive-article-date">
-  	<time datetime="2020-02-16T14:47:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/1092-To-Buy-or-Not-to-Buy-20%E5%88%86/">1092 To Buy or Not to Buy (20分)</a>
+    <h1 class="article-title" itemprop="name">
+      1025 PAT Ranking (25分)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/02/20/1025-PAT-Ranking-25%E5%88%86/" class="archive-article-date">
+  	<time datetime="2020-02-20T14:11:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejiang University. Each test is supposed to run simultaneously in several places, and the ranklists will be merged immediately after the test. Now it is your job to write a program to correctly merge all the ranklists and generate the final rank.</p>
+<a id="more"></a>
+<h1 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h1><p>Each input file contains one test case. For each case, the first line contains a positive number N (≤100), the number of test locations. Then N ranklists follow, each starts with a line containing a positive integer K (≤300), the number of testees, and then K lines containing the registration number (a 13-digit number) and the total score of each testee. All the numbers in a line are separated by a space.</p>
+<h1 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h1><p>For each test case, first print in one line the total number of testees. Then print the final ranklist in the following format:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">registration_number final_rank location_number local_rank</span><br></pre></td></tr></table></figure>
+
+<p>The locations are numbered from 1 to N. The output must be sorted in nondecreasing order of the final ranks. The testees with the same score must have the same rank, and the output must be sorted in nondecreasing order of their registration numbers.</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">1234567890001</span> <span class="number">95</span></span><br><span class="line"><span class="number">1234567890005</span> <span class="number">100</span></span><br><span class="line"><span class="number">1234567890003</span> <span class="number">95</span></span><br><span class="line"><span class="number">1234567890002</span> <span class="number">77</span></span><br><span class="line"><span class="number">1234567890004</span> <span class="number">85</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1234567890013</span> <span class="number">65</span></span><br><span class="line"><span class="number">1234567890011</span> <span class="number">25</span></span><br><span class="line"><span class="number">1234567890014</span> <span class="number">100</span></span><br><span class="line"><span class="number">1234567890012</span> <span class="number">85</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">9</span></span><br><span class="line"><span class="number">1234567890005</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">1234567890014</span> <span class="number">1</span> <span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">1234567890001</span> <span class="number">3</span> <span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">1234567890003</span> <span class="number">3</span> <span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">1234567890004</span> <span class="number">5</span> <span class="number">1</span> <span class="number">4</span></span><br><span class="line"><span class="number">1234567890012</span> <span class="number">5</span> <span class="number">2</span> <span class="number">2</span></span><br><span class="line"><span class="number">1234567890002</span> <span class="number">7</span> <span class="number">1</span> <span class="number">5</span></span><br><span class="line"><span class="number">1234567890013</span> <span class="number">8</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">1234567890011</span> <span class="number">9</span> <span class="number">2</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<h1 id="题⽬⼤意："><a href="#题⽬⼤意：" class="headerlink" title="题⽬⼤意："></a>题⽬⼤意：</h1><p>有n个考场，每个考场有若⼲数量的学⽣，给出每个考场中考⽣的编号和分数，要求算排名，输出所有考⽣的编号、排名、考场号、考场内排名</p>
+<h1 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h1><p>先按照考场内排名 然后对是否同分并列的情况进行特殊处理，将排名赋值给local_rank，注意再计算场内排名是总是由上一场的末尾作为下一场的开始，然后总排名，最后输出。注意相同的分数情况下按照学号的从⼩到⼤排列，但是他们的排名应该是⼀样的数字</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">//1025 PAT Ranking (25分)</span><br><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include&lt;algorithm&gt;</span></span><br><span class="line"><span class="comment">#include&lt;vector&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">struct stu</span><br><span class="line">&#123;</span><br><span class="line">	string id;</span><br><span class="line">	int local_num;</span><br><span class="line">	int score,local_rank,finak_rank;</span><br><span class="line">&#125;;</span><br><span class="line">vector&lt;stu&gt; s;</span><br><span class="line">bool cmp(stu s1,stu s2)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(s1.score!=s2.score)</span><br><span class="line">		<span class="built_in">return</span> s1.score&gt;s2.score;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">return</span> s1.id.compare(s2.id)&lt;0;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,num,grade;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(int i=1; i&lt;=n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;num;</span><br><span class="line">		int start=s.size();</span><br><span class="line">		s.resize(num+s.size());</span><br><span class="line">		<span class="keyword">for</span>(int j=start; j&lt;s.size(); j++)</span><br><span class="line">		&#123;</span><br><span class="line">			string str;</span><br><span class="line">			cin&gt;&gt;str&gt;&gt;grade;</span><br><span class="line">			s[j].id=str;</span><br><span class="line">			s[j].score=grade;</span><br><span class="line">			s[j].local_num=i;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		sort(s.begin()+start,s.end(),cmp);</span><br><span class="line">			</span><br><span class="line">		s[start].local_rank=1;</span><br><span class="line">		<span class="keyword">for</span>(int j=start+1; j&lt;s.size(); j++)</span><br><span class="line">		&#123;</span><br><span class="line">			s[j].local_rank=j+1-start;</span><br><span class="line">			<span class="keyword">if</span>(s[j].score==s[j-1].score)</span><br><span class="line">				s[j].local_rank=s[j-1].local_rank;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	sort(s.begin(),s.end(),cmp);</span><br><span class="line">	s[0].finak_rank=1;</span><br><span class="line">	<span class="keyword">for</span>(int j=1; j&lt;s.size(); j++)</span><br><span class="line">	&#123;</span><br><span class="line">		s[j].finak_rank=j+1;</span><br><span class="line">		<span class="keyword">if</span>(s[j].score==s[j-1].score)</span><br><span class="line">			s[j].finak_rank=s[j-1].finak_rank;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;s.size()&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">for</span>(int i=0; i&lt;s.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;s[i].id&lt;&lt;<span class="string">" "</span>&lt;&lt;s[i].finak_rank&lt;&lt;<span class="string">" "</span>&lt;&lt;s[i].local_num&lt;&lt;<span class="string">" "</span>&lt;&lt;s[i].local_rank&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hash散列</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/hash散列//" class="article-tag-list-link color2">hash散列</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/hash散列/PAT//" class="article-tag-list-link color4">PAT</a>
+        			<a href="/categories/排序//" class="article-tag-list-link color3">排序</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xiaohua.world/2020/02/20/1025-PAT-Ranking-25%E5%88%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/15/1041-Be-Unique-20%E5%88%86/" class="archive-article-date">
-  	<time datetime="2020-02-15T03:00:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/19/1012-The-Best-Rank-25%E5%88%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">1012 The Best Rank (25分)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/1041-Be-Unique-20%E5%88%86/">1041 Be Unique (20分)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hash散列</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/hash散列//" class="article-tag-list-link color2">hash散列</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/hash散列/PAT//" class="article-tag-list-link color4">PAT</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
-
-<article class="article article-type-post show">
-  <header class="article-header" style="border-bottom: 1px solid #ccc">
-  <h1 class="article-title" itemprop="name">
-    
-  </h1>
-  </header>
 
   
-  <div class="category-all-page">
-    <h2>共计&nbsp;39&nbsp;个分类</h2>
-    <ul class="category-list-item-list"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/Oracle-11g/">Oracle 11g</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/PAT/">PAT</a><span class="category-list-item-list-count">1</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/PAT/Dijkstra/">Dijkstra</a><span class="category-list-item-list-count">1</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/hash%E6%95%A3%E5%88%97/">hash散列</a><span class="category-list-item-list-count">7</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/hash%E6%95%A3%E5%88%97/PAT/">PAT</a><span class="category-list-item-list-count">2</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/hash%E6%95%A3%E5%88%97/map%E7%9A%84%E5%BA%94%E7%94%A8/">map的应用</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/hash%E6%95%A3%E5%88%97/set%E7%9A%84%E5%BA%94%E7%94%A8/">set的应用</a><span class="category-list-item-list-count">1</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%9B%BE/">图</a><span class="category-list-item-list-count">4</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%9B%BE/Dijkstra/">Dijkstra</a><span class="category-list-item-list-count">3</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%9B%BE/dfs/">dfs</a><span class="category-list-item-list-count">1</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%B9%B6%E6%9F%A5%E9%9B%86/">并查集</a><span class="category-list-item-list-count">4</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E5%B9%B6%E6%9F%A5%E9%9B%86/PAT/">PAT</a><span class="category-list-item-list-count">3</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%8E%92%E5%BA%8F/">排序</a><span class="category-list-item-list-count">6</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%8E%92%E5%BA%8F/PAT/">PAT</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%8E%92%E5%BA%8F/hash%E6%95%A3%E5%88%97/">hash散列</a><span class="category-list-item-list-count">1</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/">树</a><span class="category-list-item-list-count">9</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/Dfs/">Dfs</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/">二叉排序树</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E6%A0%91/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">树的遍历</a><span class="category-list-item-list-count">7</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/">简单模拟</a><span class="category-list-item-list-count">2</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">字符串处理</a><span class="category-list-item-list-count">1</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">软件安装</a><span class="category-list-item-list-count">1</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Oracle-11g/">Oracle 11g</a><span class="category-list-item-list-count">1</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/%E9%80%BB%E8%BE%91%E9%A2%98/">逻辑题</a><span class="category-list-item-list-count">1</span></li></ul>
-  </div>
   
-</article>
+  
+
+  
+
+  
+
+  
+
           </div>
         </div>
       </div>
@@ -335,10 +391,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",

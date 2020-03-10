@@ -160,6 +160,98 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-1066-Root-of-AVL-Tree-25分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/10/1066-Root-of-AVL-Tree-25%E5%88%86/">1066 Root of AVL Tree (25分)</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/10/1066-Root-of-AVL-Tree-25%E5%88%86/" class="archive-article-date">
+  	<time datetime="2020-03-10T13:22:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>An AVL tree is a self-balancing binary search tree. In an AVL tree, the heights of the two child subtrees of any node differ by at most one; if at any time they differ by more than one, rebalancing is done to restore this property. Figures 1-4 illustrate the rotation rules.</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">AVL树</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/AVL树//" class="article-tag-list-link color5">AVL树</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/AVL树/PAT//" class="article-tag-list-link color4">PAT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/10/1066-Root-of-AVL-Tree-25%E5%88%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-1123-Is-It-a-Complete-AVL-Tree-30分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -280,7 +372,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>set会自动排序，unordered_set不会排序。unordered_set插入是从头插入的，如插入 1 2 3，当遍历输出时为3 2 1</p>
+        <ul>
+<li>set会自动排序，unordered_set不会排序。unordered_set插入是从头插入的，如插入 1 2 3，当遍历输出时为3 2 1  </li>
+<li>在建树的时候node *tree=NULL就可以了，insert()函数里node *newNode=new node  </li>
+<li>AVL树新建结点默认高度为1  </li>
+<li>判断是不是完全⼆叉树，就看在出现了⼀个孩⼦为空的结点之后是否还会出现不为空的孩⼦结点，如果出现了就不是完全⼆叉树。例如：1123 Is It a Complete AVL Tree 30分  </li>
+<li>在对二叉树进行操作的函数的参数要加引用 如：insert(node* &amp;root,int x) 左旋L(node* &amp;root) </li>
+</ul>
 
       
 
@@ -1043,109 +1141,9 @@
 
 
   
-    <article id="post-1141-PAT-Ranking-of-Institutions-25分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/26/1141-PAT-Ranking-of-Institutions-25%E5%88%86/">1141 PAT Ranking of Institutions (25分)</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/26/1141-PAT-Ranking-of-Institutions-25%E5%88%86/" class="archive-article-date">
-  	<time datetime="2020-02-26T13:26:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>After each PAT, the PAT Center will announce the ranking of institutions based on their students’ performances. Now you are asked to generate the ranklist.</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">map的应用</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pAT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/排序//" class="article-tag-list-link color3">排序</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/排序/map的应用//" class="article-tag-list-link color2">map的应用</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/排序/map的应用/pAT//" class="article-tag-list-link color4">pAT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/26/1141-PAT-Ranking-of-Institutions-25%E5%88%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 

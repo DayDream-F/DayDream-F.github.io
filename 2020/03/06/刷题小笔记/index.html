@@ -16,7 +16,7 @@
 <meta property="og:description" content="set会自动排序，unordered_set不会排序。unordered_set插入是从头插入的，如插入 1 2 3，当遍历输出时为3 2 1   在建树的时候node *tree&#x3D;NULL就可以了，insert()函数里node *newNode&#x3D;new node   AVL树新建结点默认高度为1   判断是不是完全⼆叉树，就看在出现了⼀个孩⼦为空的结点之后是否还会出现不为空的孩⼦结点，如果出">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-06T11:23:52.000Z">
-<meta property="article:modified_time" content="2020-04-10T14:56:10.894Z">
+<meta property="article:modified_time" content="2020-04-10T15:08:00.965Z">
 <meta property="article:author" content="DayDream &#39;s Blog">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -191,9 +191,10 @@
 <li>在对二叉树进行操作的函数的参数要加引用 如：insert(node* &amp;root,int x) 左旋L(node* &amp;root) </li>
 <li>素数的判定要特殊处理0和1;</li>
 <li>素数的判定<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x&lt;=<span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i*i&lt;=x; i++)<span class="comment">//i*i&lt;x是不完整的判断，例如9</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(x%i==<span class="number">0</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>gcd<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> b==<span class="number">0</span>?a:gcd(b,a%b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>当用字符串转成整形时候，要注意前导0的情况</li>
 <li>有的进制转换题目要求 10=a ，而有的则要求直接为10</li>
-<li>当if里有多个判断条件而被分开写时（if嵌套）特别注意break的使用，如A1061 Dating (20分)</li>
+<li>当if里有多个判断条件而被分开写时（if嵌套）特别注意break的位置，如A1061 Dating (20分)</li>
 </ul>
 
       

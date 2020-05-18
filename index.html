@@ -160,6 +160,124 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-1022-Digital-Library-30分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/18/1022-Digital-Library-30%E5%88%86/">1022 Digital Library (30分)</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/18/1022-Digital-Library-30%E5%88%86/" class="archive-article-date">
+  	<time datetime="2020-05-18T12:48:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>A Digital Library contains millions of books, stored according to their titles, authors, key words of their abstracts, publishers, and published years. Each book is assigned an unique 7-digit number as its ID. Given any query from a reader, you are supposed to output the resulting books, sorted in increasing order of their ID’s.</p>
+<h1 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h1><p>Each input file contains one test case. For each case, the first line contains a positive integer N (≤10^​4^) which is the total number of books. Then N blocks follow, each contains the information of a book in 6 lines:</p>
+<p>Line #1: the 7-digit ID number;<br>Line #2: the book title – a string of no more than 80 characters;<br>Line #3: the author – a string of no more than 80 characters;<br>Line #4: the key words – each word is a string of no more than 10 characters without any white space, and the keywords are separated by exactly one space;<br>Line #5: the publisher – a string of no more than 80 characters;<br>Line #6: the published year – a 4-digit number which is in the range [1000, 3000].<br>It is assumed that each book belongs to one author only, and contains no more than 5 key words; there are no more than 1000 distinct key words in total; and there are no more than 1000 distinct publishers.</p>
+<p>After the book information, there is a line containing a positive integer M (≤1000) which is the number of user’s search queries. Then M lines follow, each in one of the formats shown below:</p>
+<p>1: a book title<br>2: name of an author<br>3: a key word<br>4: name of a publisher<br>5: a 4-digit number representing the year</p>
+<h1 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h1><p>For each query, first print the original query in a line, then output the resulting book ID’s in increasing order, each occupying a line. If no book is found, print Not Found instead.</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">1111111</span></span><br><span class="line">The Testing Book</span><br><span class="line">Yue Chen</span><br><span class="line">test code debug sort keywords</span><br><span class="line">ZUCS Print</span><br><span class="line"><span class="number">2011</span></span><br><span class="line"><span class="number">3333333</span></span><br><span class="line">Another Testing Book</span><br><span class="line">Yue Chen</span><br><span class="line">test code sort keywords</span><br><span class="line">ZUCS Print2</span><br><span class="line"><span class="number">2012</span></span><br><span class="line"><span class="number">2222222</span></span><br><span class="line">The Testing Book</span><br><span class="line">CYLL</span><br><span class="line">keywords debug book</span><br><span class="line">ZUCS Print2</span><br><span class="line"><span class="number">2011</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">1</span>: The Testing Book</span><br><span class="line"><span class="number">2</span>: Yue Chen</span><br><span class="line"><span class="number">3</span>: keywords</span><br><span class="line"><span class="number">4</span>: ZUCS Print</span><br><span class="line"><span class="number">5</span>: <span class="number">2011</span></span><br><span class="line"><span class="number">3</span>: blablabla</span><br></pre></td></tr></table></figure>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>: The Testing Book</span><br><span class="line"><span class="number">1111111</span></span><br><span class="line"><span class="number">2222222</span></span><br><span class="line"><span class="number">2</span>: Yue Chen</span><br><span class="line"><span class="number">1111111</span></span><br><span class="line"><span class="number">3333333</span></span><br><span class="line"><span class="number">3</span>: keywords</span><br><span class="line"><span class="number">1111111</span></span><br><span class="line"><span class="number">2222222</span></span><br><span class="line"><span class="number">3333333</span></span><br><span class="line"><span class="number">4</span>: ZUCS Print</span><br><span class="line"><span class="number">1111111</span></span><br><span class="line"><span class="number">5</span>: <span class="number">2011</span></span><br><span class="line"><span class="number">1111111</span></span><br><span class="line"><span class="number">2222222</span></span><br><span class="line"><span class="number">3</span>: blablabla</span><br><span class="line">Not Found</span><br></pre></td></tr></table></figure>
+<h1 id="题⽬⼤意："><a href="#题⽬⼤意：" class="headerlink" title="题⽬⼤意："></a>题⽬⼤意：</h1><p>模拟数字图书馆的查询功能。会给出n本书的信息，以及m个需要查询的命令，数字标号对应相应的命令，数字编号后⾯的字符串是查询的搜索词，要求输出这⾏命令以及输出满⾜条件的书的id，如果⼀个都没有找到，输出Not Found</p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>key words 可能不止一个</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1022 Digital Library (30分)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="built_in">string</span>,<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; m[<span class="number">6</span>];</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt; res;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,q;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	getchar();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">string</span> id,title,author,key,publisher,year;</span><br><span class="line">		getline(<span class="built_in">cin</span>,id);</span><br><span class="line">		getline(<span class="built_in">cin</span>,title);</span><br><span class="line">		getline(<span class="built_in">cin</span>,author);</span><br><span class="line">		<span class="comment">//可能有多个关键字 </span></span><br><span class="line">		<span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; key)</span><br><span class="line">		&#123;</span><br><span class="line">			m[<span class="number">3</span>][key].push_back(id);</span><br><span class="line">			<span class="keyword">char</span> c = getchar();</span><br><span class="line">			<span class="keyword">if</span>(c == <span class="string">'\n'</span>)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		getline(<span class="built_in">cin</span>,publisher);</span><br><span class="line">		getline(<span class="built_in">cin</span>,year);</span><br><span class="line">		m[<span class="number">1</span>][title].push_back(id);</span><br><span class="line">		m[<span class="number">2</span>][author].push_back(id);</span><br><span class="line">		m[<span class="number">4</span>][publisher].push_back(id);</span><br><span class="line">		m[<span class="number">5</span>][year].push_back(id);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;q);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;q; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> type;</span><br><span class="line">		<span class="built_in">string</span> query;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d: "</span>,&amp;type);</span><br><span class="line">		getline(<span class="built_in">cin</span>,query);</span><br><span class="line">		<span class="keyword">switch</span>(type)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">auto</span> it=m[<span class="number">1</span>][query].begin(); it!=m[<span class="number">1</span>][query].end(); it++)</span><br><span class="line">					res.insert(*it);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">auto</span> it=m[<span class="number">2</span>][query].begin(); it!=m[<span class="number">2</span>][query].end(); it++)</span><br><span class="line">					res.insert(*it);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">auto</span> it=m[<span class="number">3</span>][query].begin(); it!=m[<span class="number">3</span>][query].end(); it++)</span><br><span class="line">					res.insert(*it);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">auto</span> it=m[<span class="number">4</span>][query].begin(); it!=m[<span class="number">4</span>][query].end(); it++)</span><br><span class="line">					res.insert(*it);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">auto</span> it=m[<span class="number">5</span>][query].begin(); it!=m[<span class="number">5</span>][query].end(); it++)</span><br><span class="line">					res.insert(*it);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d: %s\n"</span>,type,query.c_str());</span><br><span class="line">		<span class="keyword">if</span>(res.size()==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"Not Found\n"</span>);</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">auto</span> it=res.begin(); it!=res.end(); it++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%s\n"</span>,(*it).c_str());</span><br><span class="line">		res.erase(res.begin(),res.end());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">map</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">set</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">stl</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/map//" class="article-tag-list-link color4">map</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/map/set//" class="article-tag-list-link color4">set</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/map/set/stl//" class="article-tag-list-link color4">stl</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/map/set/stl/PAT//" class="article-tag-list-link color4">PAT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/18/1022-Digital-Library-30%E5%88%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-1145-Hashing-Average-Search-Time-25分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -981,98 +1099,6 @@
 
 
   
-    <article id="post-1019-General-Palindromic-Number-20分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/20/1019-General-Palindromic-Number-20%E5%88%86/">1019 General Palindromic Number (20分)</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/20/1019-General-Palindromic-Number-20%E5%88%86/" class="archive-article-date">
-  	<time datetime="2020-03-20T14:45:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>A number that will be the same when it is written forwards or backwards is known as a PalindromicNumber. For example, 1234321 is a palindromicnumber. All single digit numbers are palindromicnumbers.Although palindromic numbers are most ofen considered in the decimal system, the concept ofpalindromicity can be applied to the natural numbers in any numeral system. Consider a number N &gt; 0 inbase b &gt;= 2, where it is written in standard notation with k+1 digits ai as the sum of (aibi) for i from 0 to k.Here, as usual, 0 &lt;= ai &lt; b for all i and ak is non-zero. Then N is palindromic if and only if ai = ak-i for all i.Zero is written 0 in any base and is also palindromic by definition.<br>Given any non-negative decimal integer N and a base b, you are supposed to tell if N is a palindromicnumber in base b.</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">进制数</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/进制数//" class="article-tag-list-link color4">进制数</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/进制数/PAT//" class="article-tag-list-link color4">PAT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/20/1019-General-Palindromic-Number-20%E5%88%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1338,6 +1364,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">线性探测</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">set</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">stl</a>
               </li>
             
             <div class="clearfix"></div>
